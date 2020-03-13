@@ -22,7 +22,7 @@
         ,{
             "path" : "pages/submit/submit",
             "style" : {
-				"navigationBarTitleText": "上传"
+				"navigationBarTitleText": "上传队伍"
 			}
         }
         ,{
@@ -31,24 +31,18 @@
 				"navigationBarTitleText": "关于"
 			}
         }
-        ,{
-            "path" : "pages/submit/submitTeam/submitTeam",
-            "style" : {
-				"navigationBarTitleText": "上传队伍"
-			}
-        }
     ],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "PokeShare!",
+		"navigationBarBackgroundColor": "#2d2d2d",
+		"backgroundColor": "#2d2d2d"
 	},
 	"tabBar": {
 		"borderStyle": "black",
-		"backgroundColor": "#333",
+		"backgroundColor": "#2d2d2d",
 		"color": "#8F8F94",
-		"selectedColor": "#f33e54",
+		"selectedColor": "#c83e3e",
 		"list": [{
 				"pagePath": "pages/index/index",
 				"iconPath": "static/img/tabbar/home.png",
