@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<uni-section title="其它" type="line"></uni-section>
 		<uni-list>
 			<navigator url="about/about" hover-class="navigator-hover">
 				<uni-list-item title="关于" />
