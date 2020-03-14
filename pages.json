@@ -26,7 +26,19 @@
 			}
         }
         ,{
-            "path" : "pages/about/about",
+            "path" : "pages/settings/settings",
+            "style" : {
+				"navigationBarTitleText": "设置"
+			}
+        }
+        ,{
+            "path" : "pages/settings/about/about",
+            "style" : {
+				"navigationBarTitleText": "关于"
+			}
+        }
+        ,{
+            "path" : "pages/settings/web-view/web-view",
             "style" : {
 				"navigationBarTitleText": "关于"
 			}
@@ -78,10 +90,10 @@
 				"text": "统计"
 			},
 			{
-				"pagePath": "pages/about/about",
+				"pagePath": "pages/settings/settings",
 				"iconPath": "static/img/tabbar/me.png",
 				"selectedIconPath": "static/img/tabbar/meactive.png",
-				"text": "关于"
+				"text": "设置"
 			}
 		]
 	}

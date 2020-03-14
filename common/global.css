@@ -1,0 +1,40 @@
+/* icon图标 https://www.jianshu.com/p/688d7b7e4564 */
+@font-face {
+	font-family: 'iconfont';
+	/* project id 1690678 */
+	src: url('//at.alicdn.com/t/font_1690678_tjyx4fwurl.eot');
+	src: url('//at.alicdn.com/t/font_1690678_tjyx4fwurl.eot?#iefix') format('embedded-opentype'),
+		url('//at.alicdn.com/t/font_1690678_tjyx4fwurl.woff2') format('woff2'),
+		url('//at.alicdn.com/t/font_1690678_tjyx4fwurl.woff') format('woff'),
+		url('//at.alicdn.com/t/font_1690678_tjyx4fwurl.ttf') format('truetype'),
+		url('//at.alicdn.com/t/font_1690678_tjyx4fwurl.svg#iconfont') format('svg');
+}
+
+/* 页面全局配置 */
+page {
+	background-color: #212221;
+	color: #FFFAFA;
+}
+
+/* 组件样式修改 */
+
+/* 列表 */
+.uni-list-item {
+	background-color: #434343;
+}
+
+.uni-list-item--hover {
+	background-color: #2d2d2d !important;
+}
+
+.uni-list-item--disabled {
+	opacity: 0.95 !important;
+	background-color: #2d2d2d;
+}
+
+.uni-list-item__content-title {
+	color: #FFFAFA !important;
+}
+
+
+
