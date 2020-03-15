@@ -3,26 +3,42 @@
 		<uni-section title="对战模式" type="line"></uni-section>
 		<uni-list>
 			<!-- TODO 写search component， @click触发之 -->
-			<uni-list-item title="当前对战模式" :rightText="format" />
+			<!-- <uni-list-item title="当前对战模式" :rightText="format" /> -->
+			<search @selected-format="getStatByFormat"></search>
 		</uni-list>
-		<uni-section title="使用率(前20名)" type="line"></uni-section>
-		{{statData}}
+		<uni-section title="宝可梦使用率 (前20名)" type="line"></uni-section>
+		<uni-list v-if="statIsAvailable">
+			<uni-list-item v-for="d in statData" :showArrow="false" :title="d.name + ': ' + d.value" :thumb="IconPath(d.name, 'pokemon')" />
+		</uni-list>
+		<uni-list v-else>
+			<uni-list-item :showArrow="false" title="暂无数据, 请尝试其他模式" />
+		</uni-list>
 	</view>
 </template>
 
 <script>
-	import {ReconstructObject, SortObjectArrayByValue} from "../../common/utils";
-	
+	import search from '../../components/search/search.vue'
+	import {
+		ReconstructObject,
+		SortObjectArrayByValue,
+		IconPath
+	} from "../../common/utils";
+
 	export default {
 		data() {
 			return {
-				format: 'VGC 2020',
+				IconPath: IconPath,
+				// stat data
 				statIsAvailable: false,
 				statData: {},
+				// picker
+				format: 'VGC 2020',
 			}
 		},
 		onLoad() {
+			// fetch data
 			this.getStatByFormat(this.format)
+
 		},
 		methods: {
 			getStatByFormat(format) {
@@ -43,12 +59,12 @@
 									this.statData = this.statData.slice(0, 20)
 								}
 							}
-							console.log(this.statData);
 						} else {
 							this.statIsAvailable = false;
 						}
 					},
 					fail: (error) => {
+						this.tips = "网络错误";
 						// Error
 						if (error.response) {
 							/*
@@ -72,7 +88,7 @@
 						console.log(error.config);
 					}
 				});
-			}
+			},
 		}
 	}
 </script>

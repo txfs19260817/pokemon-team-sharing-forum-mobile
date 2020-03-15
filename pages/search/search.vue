@@ -1,27 +1,26 @@
 <template>
 	<view class="content">
-		页面 - 2
+		敬请期待
 	</view>
-</template>
+</template> 
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
+export default {
+	data() {
+		return {
+			active: false
+		};
+	},
+	methods: {
 
-		},
-		methods: {
-
-		}
 	}
+};
 </script>
 
-<style>
+<style scoped>
 	.content {
 		text-align: center;
+		height: 400upx;
+		margin-top: 200upx;
 	}
 </style>

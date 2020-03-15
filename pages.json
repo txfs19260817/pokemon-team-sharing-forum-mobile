@@ -43,6 +43,10 @@
 				"navigationBarTitleText": "关于"
 			}
         }
+        ,{
+            "path" : "pages/team/team",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

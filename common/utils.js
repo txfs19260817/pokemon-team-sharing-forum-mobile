@@ -1,5 +1,13 @@
 import {BattleMovedex} from "./data/moves"
 
+const ApiUrl = "https://pokeshare.monster/api/v1/"
+const IconsUrl = "https://pokeshare.monster/assets/pokemon-icons/"
+const PmIconsUrl = "https://pokeshare.monster/assets/pokemon-icons/2d/"
+const ItemIconsUrl = "https://pokeshare.monster/assets/pokemon-icons/items/"
+const TypeIconsUrl = "https://pokeshare.monster/assets/pokemon-icons/types/"
+const MovetypeIconsUrl = "https://pokeshare.monster/assets/pokemon-icons/movetypes/"
+const UploadUrl = "https://pokeshare.monster/api/v1/upload"
+
 /**
  * @return {string}
  */
@@ -39,19 +47,19 @@ export function ProcessStr(s) {
 export function IconPath(name, category, ext = '.png') {
     name = ProcessStr(name);
     if (category === "pokemon") {
-        return process.env.VUE_APP_PM_ICONS + name + ext
+        return PmIconsUrl + name + ext
     }
     if (category === "items" || category === "item") {
-        return process.env.VUE_APP_ITEM_ICONS + name + ext
+        return ItemIconsUrl + name + ext
     }
     if (category === "movetypes" || category === "movetype") {
         name = BattleMovedex[name].type.toLowerCase();
-        return process.env.VUE_APP_MOVETYPE_ICONS + name + ext
+        return TypeIconsUrl + name + ext
     }
     if (category === "types" || category === "type") {
         let lang = "eng";
         let filename = ["type", name, lang].join('-');
-        return process.env.VUE_APP_TYPE_ICONS + filename + ext
+        return MovetypeIconsUrl + filename + ext
     }
 
     console.log("Error: category [" + category + "] is not valid! ")

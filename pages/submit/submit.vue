@@ -1,6 +1,6 @@
 <template>
 	<view class="content" :class="{'active':active}">
-		页面 - 上传
+		敬请期待
 	</view>
 </template> 
 
