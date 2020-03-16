@@ -20,12 +20,12 @@
 
 			<uni-section title="对战模式" type="line"></uni-section>
 			<uni-list>
-				<uni-list-item :title="team.format" />
+				<uni-list-item :title="team.format" @click="naviToFormatResult(team.format)" />
 			</uni-list>
 
 			<uni-section title="宝可梦" type="line"></uni-section>
 			<uni-list>
-				<uni-list-item v-for="p in pokemon" :title="p" :thumb="IconPath(p, 'pokemon')" />
+				<uni-list-item v-for="p in pokemon" :title="p" :thumb="IconPath(p, 'pokemon')" @click="naviToPmResult(p)" />
 			</uni-list>
 
 			<uni-section title="描述" type="line"></uni-section>
@@ -63,6 +63,18 @@
 			}
 		},
 		methods: {
+			naviToFormatResult(f) {
+				const serverPath = `formats/`
+				uni.navigateTo({
+					url: '../result/result?serverPath=' + serverPath + '&category=' + f
+				});
+			},
+			naviToPmResult(p) {
+				const serverPath = `pokemon/`
+				uni.navigateTo({
+					url: '../result/result?serverPath=' + serverPath + '&category=' + p
+				});
+			},
 			getTeamById(id) {
 				uni.request({
 					url: this.ApiUrl + 'teams/' + id,

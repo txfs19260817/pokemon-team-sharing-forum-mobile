@@ -30,13 +30,13 @@
 			naviToFormatResult(f) {
 				const serverPath = `formats/`
 				uni.navigateTo({
-					url: 'result?serverPath=' + serverPath + '&category=' + f
+					url: '../result/result?serverPath=' + serverPath + '&category=' + f
 				});
 			},
 			naviToPmResult(p) {
 				const serverPath = `pokemon/`
 				uni.navigateTo({
-					url: 'result?serverPath=' + serverPath + '&category=' + p
+					url: '../result/result?serverPath=' + serverPath + '&category=' + p
 				});
 			}
 		}

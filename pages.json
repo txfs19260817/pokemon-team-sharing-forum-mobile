@@ -48,7 +48,7 @@
             "style" : {}
         }
         ,{
-            "path" : "pages/search/result",
+            "path" : "pages/result/result",
             "style" : {}
         }
     ],

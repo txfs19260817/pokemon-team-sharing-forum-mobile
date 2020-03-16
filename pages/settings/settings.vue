@@ -3,7 +3,7 @@
 		<uni-section title="其它" type="line"></uni-section>
 		<uni-list>
 			<!--  #ifdef  H5 -->
-			<uni-list-item @click="naviToPC" title="跳转至PC版" rightText="pokeshare.monster" />
+			<!-- <uni-list-item @click="naviToPC" title="跳转至PC版" rightText="pokeshare.monster" /> -->
 			<!--  #endif -->
 			<navigator url="about/about" hover-class="navigator-hover">
 				<uni-list-item title="关于" />
