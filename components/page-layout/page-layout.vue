@@ -3,17 +3,12 @@
 		<mescroll-body ref="mescrollRef" @init="mescrollInit" @down="downCallback" @up="upCallback" :down="downOption" :up="upOption">
 			<view v-for="(item, index) in teams">
 				<uni-card :is-shadow="true" :title="'['+item.format+'] '+item.title" mode="title" thumbnail="/static/img/favicon.png"
-				 :extra="item.author" note="true" @click="clickCard">
+				 :extra="item.author" :note="DateConversion(item.created_at)" @click="clickCard(item.id)">
 					<view>
 						<view class="image-box">
 							<image class="image" mode="aspectFit" :src="item.rentalImgUrl" />
 						</view>
 					</view>
-					<template slot="footer">
-						<view class="content-box">
-							<text class="content-box-text">点击查看更多</text>
-						</view>
-					</template>
 				</uni-card>
 			</view>
 		</mescroll-body>
@@ -22,6 +17,9 @@
 
 <script>
 	import MescrollMixin from "@/components/mescroll-uni/mescroll-mixins.js";
+	import {
+		DateConversion
+	} from '@/common/utils.js'
 
 	export default {
 		mixins: [MescrollMixin],
@@ -40,6 +38,7 @@
 		data() {
 			return {
 				serverUrl: '',
+				DateConversion: DateConversion,
 				// data
 				teams: [],
 				// mescroll
@@ -64,11 +63,12 @@
 				},
 			}
 		},
-		created() {
-			// this.serverUrl = this.serverPath + this.category;
-			// this.getTeamsBy(this.serverUrl, 1);
-		},
 		methods: {
+			clickCard(id){
+				uni.navigateTo({
+					url: '../team/team?id=' + id
+				});
+			},
 			upCallback(page) {
 				this.serverUrl = this.serverPath + this.category;
 				let pageNum = page.num; // 页码, 默认从1开始
@@ -99,8 +99,6 @@
 							this.$nextTick(() => {
 								this.mescroll.endBySize(curPageLen, totalSize); // 请求成功,隐藏加载状态
 							});
-							console.log(this.teams);
-							console.log(this.mescroll);
 						} else {
 							this.tips = "网络错误";
 							this.mescroll.endErr();

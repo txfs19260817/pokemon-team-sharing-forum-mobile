@@ -20,7 +20,7 @@
 	} from '../../common/data/formats.js'
 	
 	export default {
-		name: 'search',
+		name: 'search-by-format',
 		data() {
 			return {
 				/* Format */
@@ -29,12 +29,11 @@
 				formatArray: [
 					FormatCatagories, Formats[0]
 				],
-				selectedFormat: 'VGC 2020',
+				selectedFormat: '未选择',
 			};
 		},
 		methods: {
 			formatPickerColumnChange(e) {
-				console.log('修改的列为：' + e.detail.column + '，值为：' + e.detail.value);
 				this.formatIndex[e.detail.column] = e.detail.value;
 				switch (e.detail.column) {
 					case 0: //拖动第0列

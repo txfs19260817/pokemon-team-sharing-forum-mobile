@@ -47,6 +47,10 @@
             "path" : "pages/team/team",
             "style" : {}
         }
+        ,{
+            "path" : "pages/search/result",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
@@ -67,36 +71,26 @@
 			},
 			{
 				"pagePath": "pages/search/search",
-				"iconPath": "static/img/tabbar/news.png",
-				"selectedIconPath": "static/img/tabbar/newsactive.png",
+				"iconPath": "static/img/tabbar/search.png",
+				"selectedIconPath": "static/img/tabbar/searchactive.png",
 				"text": "搜索"
 			},
-
-			//#ifdef MP-WEIXIN
 			{
 				"pagePath": "pages/submit/submit",
-				"iconPath": "static/img/tabbar/add.png",
-				"selectedIconPath": "static/img/tabbar/addactive.png",
+				"iconPath": "static/img/tabbar/upload.png",
+				"selectedIconPath": "static/img/tabbar/uploadactive.png",
 				"text": "发布"
 			},
-			//#endif
-			//#ifndef MP-WEIXIN
-			{
-				"pagePath": "pages/submit/submit",
-				"iconPath": "static/img/tabbar/add.png",
-				"selectedIconPath": "static/img/tabbar/addactive.png"
-			},
-			//#endif
 			{
 				"pagePath": "pages/stat/stat",
-				"iconPath": "static/img/tabbar/guanzhu.png",
-				"selectedIconPath": "static/img/tabbar/guanzhuactive.png",
+				"iconPath": "static/img/tabbar/stat.png",
+				"selectedIconPath": "static/img/tabbar/statactive.png",
 				"text": "统计"
 			},
 			{
 				"pagePath": "pages/settings/settings",
-				"iconPath": "static/img/tabbar/me.png",
-				"selectedIconPath": "static/img/tabbar/meactive.png",
+				"iconPath": "static/img/tabbar/set.png",
+				"selectedIconPath": "static/img/tabbar/setactive.png",
 				"text": "设置"
 			}
 		]

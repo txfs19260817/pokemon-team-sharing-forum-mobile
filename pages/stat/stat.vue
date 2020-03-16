@@ -2,9 +2,7 @@
 	<view>
 		<uni-section title="对战模式" type="line"></uni-section>
 		<uni-list>
-			<!-- TODO 写search component， @click触发之 -->
-			<!-- <uni-list-item title="当前对战模式" :rightText="format" /> -->
-			<search @selected-format="getStatByFormat"></search>
+			<search-by-format @selected-format="getStatByFormat"></search-by-format>
 		</uni-list>
 		<uni-section title="宝可梦使用率 (前20名)" type="line"></uni-section>
 		<uni-list v-if="statIsAvailable">
@@ -17,7 +15,6 @@
 </template>
 
 <script>
-	import search from '../../components/search/search.vue'
 	import {
 		ReconstructObject,
 		SortObjectArrayByValue,
@@ -31,14 +28,7 @@
 				// stat data
 				statIsAvailable: false,
 				statData: {},
-				// picker
-				format: 'VGC 2020',
 			}
-		},
-		onLoad() {
-			// fetch data
-			this.getStatByFormat(this.format)
-
 		},
 		methods: {
 			getStatByFormat(format) {
