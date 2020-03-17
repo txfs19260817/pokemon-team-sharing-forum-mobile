@@ -6,7 +6,7 @@
 		</uni-list>
 		<uni-section title="宝可梦使用率 (前20名)" type="line"></uni-section>
 		<uni-list v-if="statIsAvailable">
-			<uni-list-item v-for="d in statData" :showArrow="false" :title="d.name + ': ' + d.value" :thumb="IconPath(d.name, 'pokemon')" />
+			<uni-list-item v-for="d in statData" :title="d.name + ': ' + d.value" :thumb="IconPath(d.name, 'pokemon')" @click="naviToPmResult(d.name)" />
 		</uni-list>
 		<uni-list v-else>
 			<uni-list-item :showArrow="false" title="暂无数据, 请尝试其他模式" />
@@ -31,6 +31,12 @@
 			}
 		},
 		methods: {
+			naviToPmResult(p) {
+				const serverPath = `pokemon/`
+				uni.navigateTo({
+					url: '../result/result?serverPath=' + serverPath + '&category=' + p
+				});
+			},
 			getStatByFormat(format) {
 				uni.request({
 					url: this.ApiUrl + 'stat/' + format,
